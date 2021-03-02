@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alfred's Cake Shop</title>
+<link rel="stylesheet" href="StyleContact.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+    <body>
+        
+        <header> <h1>Alfred's Cake Shop</h1>
+           
+            
+  <nav id="navcontainer">
+	<div class="links">
+		<a href="#" class="fa fa-facebook"></a>
+		<a href="#" class="fa fa-twitter"></a>
+		<a href="#" class="fa fa-google"></a>
+    </div>
+	<ul>
+		<li><a href="Index.html">Home</a></li>
+		<li><a href="ChocolateCakes.html">Chocolate Cakes</a></li>
+		<li><a href="FruitCakes.html">Fruit Cakes</a></li>
+		<li><a href="WeddingCakes.html">Wedding Cakes</a></li>
+		<li><a href="ContactUs.html">Contact Us</a></li>
+	</ul>
+       </header>
+</nav>
+
+
+
+<div class="contact-container">
+ <div style="text-align:center">
+ <h2>Contact Us</h2>
+ <p><strong>Swing by for a cup of coffee, or leave us a message:</strong></p>
+ </div>
+ <div class="row">
+ <div class="column "> <!--1st column -->
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1356.7582017810885!2d28.617721976131346!3d47.14773969476371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cbd00115185d65%3A0xe82471ced0b9f009!2sStrada%20%C5%9Etefan%20cel%20Mare%20119-117%2C%20Str%C4%83%C5%9Feni%2C%20Moldova!5e0!3m2!1sen!2sie!4v1606900740039!5m2!1sen!2sie" width="600" height="450" frameborder="0" style="border:0;"
+ allowfullscreen="" aria-hidden="false"style="width:100%" tabindex="0"></iframe> 
+<!--replace this area later with map code -->
+ </div>
+ <div class="column column50"  <!--2nd column -->
+  <form name="contactForm" id="contactForm" method="post" action="contactServlet" onsubmit="return checkForm()">
+ <label for="fname">Name <span class="red">*</span></label>
+ <input type="text" id="fname" name="firstname" placeholder="Your name..">
+ <label for="email">Email <span class="red">*</span></label>
+ <input type="text" id="email" name="email" placeholder="Your email">
+ <label for="country">Country <span class="red">*</span></label>
+ <select id="country" name="country">
+ <option value="australia">Australia</option>
+ <option value="canada">Canada</option>
+ <option value="usa">USA</option>
+ <option value="Europe">Europe</option>
+ <option value="Asia">Asia</option>
+ </select>
+ <label for="subject">Subject <span class="red">*</span></label>
+ <textarea id="subject" name="subject" placeholder="Write
+something.." style="height:170px"></textarea>
+ <input type="submit" value="Submit">
+ </form>
+ </div>
+ </div>
+</div>
+<script>
+function checkForm()
+{
+var name = document.forms["contactForm"]["fname"];
+var email = document.forms["contactForm"]["email"];
+var country = document.forms["contactForm"]["country"];
+var subject = document.forms["contactForm"]["subject"];
+var what = document.forms["contactForm"]["message"];
+if (name.value == "" )
+{
+window.alert( "Please enter your name." );
+name.focus();
+return false;
+}
+if (email.value == "" ){
+window.alert( "Please enter a valid e-mail address." );
+email.focus();
+return false ;
+}
+if (email.value.indexOf( "@" , 0) < 0)
+{
+window.alert( "Please enter a valid e-mail address." );
+email.focus();
+return false ;
+}
+if (email.value.indexOf( "." , 0) < 0)
+{
+window .alert( "Please enter a valid e-mail address." );
+email.focus();
+return false ;
+}
+if (country.value == "" )
+{
+window.alert( "Please enter a country." );
+country.focus();
+return false;
+}
+
+if (subject.value < 5)
+{
+alert( "Please enter a proper message" );
+subject.focus();
+return false ;
+}
+return true ;
+}</script>	
+
+</body>
